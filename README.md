@@ -1,2 +1,2 @@
 # Pinia
-State Management
+State Management playground
