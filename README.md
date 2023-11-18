@@ -1,2 +1,2 @@
-# Pinia
-State Management playground
+# Functional CRM
+Using Nuxt UI
