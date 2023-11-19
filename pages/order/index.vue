@@ -77,22 +77,22 @@ definePageMeta({
                 {{ order.balance }}
               </td>
               <td
-                class="px-6 py-4 text-white bg-amber-300"
+                class="px-6 py-4 text-black font-bold text-sm sm:text-xs"
                 v-if="order.order_status === 'On process'"
               >
-                {{ order.order_status }}
+                <div class="text-center bg-amber-300 py-2 px-2 rounded-lg">{{ order.order_status }}</div>
               </td>
               <td
-                class="px-6 py-4 text-white bg-red-400"
+                class="px-6 py-4 text-black font-bold text-sm sm:text-xs"
                 v-if="order.order_status === 'Not yet started'"
               >
-                {{ order.order_status }}
+              <div class="text-center bg-red-400 py-2 px-2 rounded-lg">{{ order.order_status }}</div>
               </td>
               <td
-                class="px-6 py-4 text-white bg-emerald-400"
+                class="px-6 py-4 text-black font-bold text-sm sm:text-xs"
                 v-if="order.order_status === 'Delivered'"
               >
-                {{ order.order_status }}
+              <div class="text-center bg-emerald-400 py-2 px-2 rounded-lg">{{ order.order_status }}</div>
               </td>
               <!-- Action Section for Update and Delete -->
               <td class="px-6 py-4">
