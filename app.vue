@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <section class="bg-white">
     <!-- Navigation Bar -->
-    <NavigationBar/>
+    <NavigationBar />
     <main>
       <!-- Home Page -->
       <NuxtPage />
     </main>
-  </div>
+  </section>
 </template>
