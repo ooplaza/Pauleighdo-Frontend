@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-white">
+  <section>
     <!-- Navigation Bar -->
     <NavigationBar />
     <main>
