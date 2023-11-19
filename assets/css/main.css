@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Rubik:ital,wght@0,300;0,400;0,500;1,700&display=swap');
+
+
+@font-face {
+    font-family: 'Roobert';
+    src: url('~/assets/fonts/Roobert.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Portico-Outline';
+    src: url('~/assets/fonts/Portico Outline 400.otf') format('opentype');
+    font-weight: bold;
+    font-style: outline;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Portico-Regular';
+    src: url('~/assets/fonts/Portico Regular 400.otf') format('opentype');
+    font-weight: bold;
+    font-style: outline;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Baybayin';
+    src: url('~/assets/fonts/BAYBAYIN SISIL 400.ttf') format('truetype');
+    font-weight: bold;
+    font-style: outline;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GameBoy';
+    src: url('~/assets/fonts/GameBoy.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
