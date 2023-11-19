@@ -4,7 +4,7 @@ const auth = useAuthStore();
 </script>
 
 <template>
-  <section class="py-8 p-4 flex items-center justify-center">
+  <section class="mt-40 p-4 flex items-center justify-center">
   <!-- login container -->
   <div class="bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
       <!-- form -->
