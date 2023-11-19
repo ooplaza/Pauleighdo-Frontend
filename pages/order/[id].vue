@@ -29,7 +29,7 @@ definePageMeta({
                     </h3>
                 </div>
                 <!-- Modal body -->
-                <form @submit.prevent="auth.UpdateOrder" class="p-4 md:p-5">
+                <form @submit.prevent="auth.UpdateOrder(id)" class="p-4 md:p-5">
                     <div class="grid gap-4 mb-4 grid-cols-4">
                         <div class="col-span-4">
                             <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
