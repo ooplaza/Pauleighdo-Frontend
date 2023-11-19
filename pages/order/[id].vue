@@ -1,4 +1,5 @@
 <script setup>
+import { definePageMeta } from '#imports';
 const auth = useCreateUpdateStore();
 const { id } = useRoute().params;
 const router = useRouter()
@@ -9,6 +10,10 @@ const cancelForm = () => {
 onMounted(() => {
   auth.GetOrderDetail(id);
 });
+
+definePageMeta({
+    middleware: ["auth"]
+})
 </script>
 
 <template>

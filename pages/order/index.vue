@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted } from "vue";
 import { initFlowbite } from "flowbite";
+import { definePageMeta } from "#imports";
 import { useGetDeleteOrders } from "~/stores/useGetDeleteOrders";
 const auth = useGetDeleteOrders();
 
@@ -11,6 +12,10 @@ onMounted(() => {
 onMounted(() => {
   auth.OrdersFetcher();
 });
+
+definePageMeta({
+  middleware: ["auth"]
+})
 </script>
 
 <template>
@@ -120,6 +125,13 @@ onMounted(() => {
           </tbody>
         </table>
       </div>
+      <section v-if="auth.orders.length === 0" class="pt-4 flex justify-center">
+        <Icon
+          name="i-heroicons-exclamation-circle"
+          size="3rem"
+          class="text-gray-400"
+        />
+      </section>
     </div>
   </div>
 </template>
