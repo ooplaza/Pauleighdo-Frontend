@@ -87,8 +87,8 @@ export const useAuthStore = defineStore("AUTH", {
 
         // Clear Login form and grab User Information
         this.clearLoginForm();
-        this.GetUserInfo();
-        useRouter().push("/")
+        await this.GetUserInfo();
+        useRouter().push("/order")
       } catch (error) {
         console.log(error);
       }
