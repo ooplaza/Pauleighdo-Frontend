@@ -13,9 +13,9 @@ onMounted(() => {
   auth.OrdersFetcher();
 });
 
-definePageMeta({
-  middleware: ["auth"]
-})
+// definePageMeta({
+//   middleware: ["auth"]
+// })
 </script>
 
 <template>

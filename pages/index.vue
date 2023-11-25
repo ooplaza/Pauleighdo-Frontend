@@ -3,9 +3,9 @@ import { useAuthStore } from "~/stores/useAuthStore";
 import { definePageMeta } from "#imports";
 
 const auth = useAuthStore();
-definePageMeta({
-  middleware: ["auth"],
-});
+// definePageMeta({
+//   middleware: ["auth"],
+// });
 </script>
 
 <template>

@@ -20,8 +20,11 @@
   },
   "dependencies": {
     "@nuxt/ui": "^2.10.0",
+    "apexcharts": "^3.44.0",
     "axios": "^1.6.2",
+    "chart.js": "^3.9.1",
     "flowbite": "^2.1.1",
-    "pinia": "^2.1.7"
+    "pinia": "^2.1.7",
+    "vue-chart-3": "^3.1.8"
   }
 }
