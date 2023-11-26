@@ -11,6 +11,10 @@ module.exports = {
         baybayin: ["Baybayin", "sans-serif"],
         gameboy: ["Gameboy", "sans-serif"],
       },
+      backgroundImage: {
+        'logo-dark-pattern': "url('/Pattern - dark.png')",
+        'logo-light-pattern': "url('/Pattern - light.png')"
+      }
     },
   },
 
@@ -19,7 +23,11 @@ module.exports = {
   plugins: [
     // require('@tailwindcss/line-clamp'),
     require("flowbite/plugin"),
+    require("daisyui"),
   ],
 
-  content: ["./node_modules/flowbite/**/*.js"],
+  content: [
+      "./node_modules/flowbite/**/*.js",
+      "node_modules/preline/dist/*.js",
+  ],
 };
