@@ -125,8 +125,8 @@ import { useAuthStore } from "~/stores/useAuthStore";
           Custom Bouquet?
       </div>
     </div>
-    <div class="flex justify-center font-bold italic">
-      Pauleighdo got you!
+    <div class="flex justify-center text-[#606C38] font-bold italic">
+      Pauleido got you!
     </div>
     <div class="text-center pt-2">
       <button
