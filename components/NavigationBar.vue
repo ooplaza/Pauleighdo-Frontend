@@ -18,7 +18,7 @@ const navigation = [
 </script>
 
 <template>
-    <nav class="bg-[#FBFAE4] dark:bg-gray-900 fixed w-full z-20 top-0 start-0">
+    <nav class="bg-[#FBFAE4] dark:bg-gray-900 fixed w-full z-30 top-0 start-0">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <NuxtLink to="/" class="flex font-extrabold text-[#606C38] items-center space-x-3 rtl:space-x-reverse">
                 <NuxtImg preload loading="lazy" src="/Main Logo.png" class="h-12 me-3 sm:h-12" />
