@@ -124,8 +124,7 @@ const resetForm = () => {
             Let's get in touch!
           </h1>
           <p class="py-6 text-black dark:text-gray-400 tracking-wide">
-            “Failing doesn’t give you a reason to give up, as long as you
-            believe.”<br />– Naruto
+            “Luxury meets craftsmanship in our exclusive line of custom crochet creations.”
           </p>
           <div>
             <form @submit.prevent="sendEmail" autocomplete="" id="contact">
