@@ -122,7 +122,7 @@ import { useAuthStore } from "~/stores/useAuthStore";
   <section class="bg-[#FBFAE4]">
     <div class="flex justify-center pt-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grow items-start w-full">
       <div id="NAME" class="font-extrabold text-center sm:text-center md:text-center lg:text-start text-[#606C38] text-4xl md:text-5xl lg:text-6xl antialiased dark:text-gray-400">
-          Custom Bouquet?
+          Customized bouquet?
       </div>
     </div>
     <div class="flex justify-center text-[#606C38] font-bold italic">
