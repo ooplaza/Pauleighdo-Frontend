@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   modules: ["@nuxt/ui", "nuxt-icon", "@nuxt/image", "@pinia/nuxt"],
   app: {
     head: {
-      title: "Pauleighdo",
+      title: "Pauleido",
       meta: [],
 
       link: [{ rel: "icon", type: "image/x-icon", href: "/Icon 2.png" }],
