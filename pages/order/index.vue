@@ -2,17 +2,19 @@
 import { onMounted } from "vue";
 import { initFlowbite } from "flowbite";
 import { definePageMeta } from "#imports";
+import { useAuthStore } from "~/stores/useAuthStore";
 import { useGetDeleteOrders } from "~/stores/useGetDeleteOrders";
 import { useCreateUpdateStore } from "~/stores/useCreateUpdateStore";
 const useGet = useCreateUpdateStore();
-const auth = useGetDeleteOrders();
+const useGO = useGetDeleteOrders();
+const auth = useAuthStore();
 
 // initialize components based on data attribute selectors
 onMounted(() => {
   initFlowbite();
 });
 onMounted(() => {
-  auth.OrdersFetcher();
+  useGO.OrdersFetcher();
 });
 </script>
 
@@ -21,6 +23,26 @@ onMounted(() => {
     <div>
       <!-- Only display when successfully send the email! -->
       <div class="text-center">
+        <div
+          v-motion-fade
+          v-if="auth.notification.login_success"
+          class="alert alert-success mt-5 mb-5 font-bold"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="stroke-current shrink-0 h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <span>{{ auth.notification.login_success_text }}</span>
+        </div>
         <div
           v-motion-fade
           v-if="useGet.notification.notification_success"
@@ -65,7 +87,7 @@ onMounted(() => {
         </div>
         <div
           v-motion-fade
-          v-if="auth.notification.notification_delete"
+          v-if="useGO.notification.notification_delete"
           ontimeupdate="timeout"
           role="alert"
           class="alert alert-warning mt-5 mb-5 font-bold"
@@ -83,7 +105,7 @@ onMounted(() => {
               d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
             />
           </svg>
-          <span>{{ auth.notification.notification_delete_text }}</span>
+          <span>{{ useGO.notification.notification_delete_text }}</span>
         </div>
       </div>
 
@@ -109,7 +131,7 @@ onMounted(() => {
             >
               <tr>
                 <th
-                  v-for="header in auth.headers"
+                  v-for="header in useGO.headers"
                   :key="header.id"
                   scope="col"
                   class="px-6 py-3 font-extrabold"
@@ -120,7 +142,7 @@ onMounted(() => {
             </thead>
             <tbody>
               <tr
-                v-for="order in auth.orders"
+                v-for="order in useGO.orders"
                 :key="order.id"
                 class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
               >
@@ -191,7 +213,7 @@ onMounted(() => {
                       </div>
                     </button>
                   </NuxtLink>
-                  <button @click="auth.DeleteOrder(order.id)">
+                  <button @click="useGO.DeleteOrder(order.id)">
                     <Icon
                       name="i-heroicons-trash"
                       size="1.3rem"
@@ -204,7 +226,7 @@ onMounted(() => {
           </table>
         </div>
         <section
-          v-if="auth.orders.length === 0"
+          v-if="useGO.orders.length === 0"
           class="pt-4 flex justify-center"
         >
           <Icon

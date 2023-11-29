@@ -14,6 +14,13 @@ export const useAuthStore = defineStore("AUTH", {
       first_name: "",
       last_name: "",
     },
+    notification: {
+      timeout: 5000,
+      login_success: false,
+      login_failed: false,
+      login_success_text: "Login Success!",
+      login_failed_text: "",
+    },
     UserInfo: null,
   }),
 
@@ -88,9 +95,25 @@ export const useAuthStore = defineStore("AUTH", {
         // Clear Login form and grab User Information
         this.clearLoginForm();
         await this.GetUserInfo();
-        useRouter().push("/order")
+        useRouter().push("/order");
+
+        console.log(response);
+
+        // Enable Notification Success
+        this.notification.login_success = true;
+        setTimeout(() => {
+          this.notification.login_success = false;
+        }, this.notification.timeout);
       } catch (error) {
         console.log(error);
+
+        // Enable Notification Failed
+        this.notification.login_failed = true;
+        this.notification.login_failed_text =
+          error["response"]["data"]["detail"];
+        setTimeout(() => {
+          this.notification.login_failed = false;
+        }, this.notification.timeout);
       }
     },
 
