@@ -15,6 +15,13 @@ export const useCreateUpdateStore = defineStore("CreateUpdate_Order", {
       balance: "",
       order_status: "",
     },
+    notification: {
+      timeout: 5000,
+      notification_success: false,
+      notification_update: false,
+      notification_success_text: "Order Created",
+      notification_update_text: "Order Updated!",
+    },
     order: [],
   }),
 
@@ -69,7 +76,13 @@ export const useCreateUpdateStore = defineStore("CreateUpdate_Order", {
 
         this.clearForm();
         console.log("Order Created!");
-        useGetDeleteOrders().OrdersFetcher()
+        useGetDeleteOrders().OrdersFetcher();
+
+        // Enable Notification Success
+        this.notification.notification_success = true;
+        setTimeout(() => {
+          this.notification.notification_success = false;
+        }, this.notification.timeout);
       } catch (error) {
         console.error(error);
       } finally {
@@ -94,6 +107,12 @@ export const useCreateUpdateStore = defineStore("CreateUpdate_Order", {
         this.clearForm();
         console.log("Order Updated!");
         useRouter().push("/order");
+
+        // Enable Notification Update
+        this.notification.notification_update = true;
+        setTimeout(() => {
+          this.notification.notification_update = false;
+        }, this.notification.timeout);
       } catch (error) {
         console.error(error);
       } finally {

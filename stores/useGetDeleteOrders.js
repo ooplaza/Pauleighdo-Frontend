@@ -15,6 +15,11 @@ export const useGetDeleteOrders = defineStore("GetDelete_Order", {
       "order status",
       "action",
     ],
+    notification: {
+      timeout: 5000,
+      notification_delete: false,
+      notification_delete_text: "Order has been removed!",
+    },
     orders: [],
   }),
 
@@ -46,6 +51,11 @@ export const useGetDeleteOrders = defineStore("GetDelete_Order", {
 
         // Update the local state using the getter
         this.orders = this.filteredOrders(id);
+        // Enable Notification Success
+        this.notification.notification_delete = true;
+        setTimeout(() => {
+          this.notification.notification_delete = false;
+        }, this.notification.timeout);
       } catch (error) {
         console.log(error);
       } finally {
