@@ -16,6 +16,8 @@ export const useAuthStore = defineStore("AUTH", {
     },
     notification: {
       timeout: 5000,
+      loading: false,
+      button_display: true,
       login_success: false,
       login_failed: false,
       login_success_text: "Login Success!",
@@ -81,6 +83,10 @@ export const useAuthStore = defineStore("AUTH", {
     // Login handler
     async LoginHandler() {
       try {
+        // Enable Loading button
+        this.notification.button_display = false;
+        this.notification.loading = true;
+
         const response = await useApiFetch().post(`api/auth/login/`, {
           email: this.LoginForm.email,
           password: this.LoginForm.password,
@@ -97,8 +103,6 @@ export const useAuthStore = defineStore("AUTH", {
         await this.GetUserInfo();
         useRouter().push("/order");
 
-        console.log(response);
-
         // Enable Notification Success
         this.notification.login_success = true;
         setTimeout(() => {
@@ -114,6 +118,10 @@ export const useAuthStore = defineStore("AUTH", {
         setTimeout(() => {
           this.notification.login_failed = false;
         }, this.notification.timeout);
+      } finally {
+        // Disable Loading button
+        this.notification.button_display = true;
+        this.notification.loading = false;
       }
     },
 

@@ -71,7 +71,11 @@ const auth = useAuthStore();
             type="submit"
             class="bg-white py-2 border w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 text-[#002D74]"
           >
-            Login
+            <span
+              v-if="auth.notification.loading"
+              class="loading loading-dots loading-xs"
+            ></span>
+            <p v-if="auth.notification.button_display">Login</p>
           </button>
         </form>
 
